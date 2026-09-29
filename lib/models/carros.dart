@@ -8,6 +8,7 @@ class Carros {
   final String local;
   final String dataPublicacao;
   final String url;
+  final bool aceitaTroca;
 
   const Carros({
     required this.titulo,
@@ -19,6 +20,8 @@ class Carros {
     required this.local,
     required this.dataPublicacao,
     required this.url,
+    required this.aceitaTroca,
+
 
 
 
@@ -34,7 +37,8 @@ const List<Carros> carsMock = [
       preco: 20976,
       local: 'São Caetano do Sul, Santa Maria',
       dataPublicacao: 'Há 7 d',
-      url: 'assets/images/image01.png'
+      url: 'assets/images/image01.png',
+      aceitaTroca: true
   ),
   Carros(
       titulo: 'Volkswagen Brasilia 1600',
@@ -45,7 +49,8 @@ const List<Carros> carsMock = [
       preco: 24900,
       local: 'São Paulo, Parada Inglesa',
       dataPublicacao: 'Há 21 d',
-      url: 'assets/images/image04.png'
+      url: 'assets/images/image04.png',
+      aceitaTroca: false
   ),
   Carros(
       titulo: 'Volkswagen Gol GL 1.6 8V Álcool',
@@ -56,7 +61,8 @@ const List<Carros> carsMock = [
       preco: 19500,
       local: 'Suzano, Parque Santa Rosa',
       dataPublicacao: 'Ontem',
-      url: 'assets/images/image07.png'
+      url: 'assets/images/image07.png',
+      aceitaTroca: true
   ),
   Carros(
       titulo: 'Volkswagen Fusca 1965',
@@ -67,7 +73,8 @@ const List<Carros> carsMock = [
       preco: 49900,
       local: 'Santos, Vila Mathias',
       dataPublicacao: '12 set',
-      url: 'assets/images/image10.png'
+      url: 'assets/images/image10.png',
+      aceitaTroca: false
   ),
   Carros(
       titulo: 'Fiat Uno Mille 1.0 Electronic 4P',
@@ -78,7 +85,8 @@ const List<Carros> carsMock = [
       preco: 15000,
       local: 'Vila Guilherme - SP',
       dataPublicacao: 'Hoje',
-      url: 'assets/images/image13.png'
+      url: 'assets/images/image13.png',
+      aceitaTroca: true
   ),
   Carros(
       titulo: 'Fiat Stilo 1.8 Attractive Flex 8V',
@@ -89,7 +97,8 @@ const List<Carros> carsMock = [
       preco: 25000,
       local: 'Jandira - SP',
       dataPublicacao: '8 de ago',
-      url: 'assets/images/image15.png'
+      url: 'assets/images/image15.png',
+      aceitaTroca: false
   ),
   Carros(
       titulo: 'Renault Clio Rn/Alize/Expr 1.0 Hi-power',
@@ -100,6 +109,7 @@ const List<Carros> carsMock = [
       preco: 34900,
       local: 'Praia Grande',
       dataPublicacao: 'Ontem',
-      url: 'assets/images/image18.png'
+      url: 'assets/images/image18.png',
+      aceitaTroca: true
   ),
 ];

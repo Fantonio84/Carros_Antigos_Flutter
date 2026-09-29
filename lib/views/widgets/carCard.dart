@@ -1,3 +1,4 @@
+import 'package:carros_antigos/views/car_details_page.dart';
 import 'package:flutter/material.dart';
 import 'package:carros_antigos/models/carros.dart';
 
@@ -22,40 +23,50 @@ class CarCard extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
-      children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+    return  InkWell(
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CarDetailsPage(car: carros),
+            )
+        );
+      },
+      child: Column(
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
 
-            ClipRRect(
-              borderRadius :BorderRadius.circular(8.0),
-              child: Image.asset(
-                carros.url,
-                width: 120,
-                height : 120,
-                fit : BoxFit.cover
-              )
+              ClipRRect(
+                  borderRadius :BorderRadius.circular(8.0),
+                  child: Image.asset(
+                      carros.url,
+                      width: 120,
+                      height : 120,
+                      fit : BoxFit.cover
+                  )
 
-            ),
-            SizedBox(width: 14),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(carros.titulo, style :TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
-                Text(carros.subtitulo, style :TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),
-                Text('${_formatMilhar(carros.quilometragem)} km - ${carros.ano} - ${carros.cor} ', style :TextStyle(fontSize: 14, fontWeight: FontWeight.w400)),
-                Text('R\$ ${_formatMilhar(carros.preco)}', style :TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
-                Text('${carros.dataPublicacao} | ${carros.local}', style :TextStyle(fontSize: 13, fontWeight: FontWeight.w300)),
+              ),
+              SizedBox(width: 14),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(carros.titulo, style :TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+                  Text(carros.subtitulo, style :TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),
+                  Text('${_formatMilhar(carros.quilometragem)} km - ${carros.ano} - ${carros.cor} ', style :TextStyle(fontSize: 14, fontWeight: FontWeight.w400)),
+                  Text('R\$ ${_formatMilhar(carros.preco)}', style :TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
+                  Text('${carros.dataPublicacao} | ${carros.local}', style :TextStyle(fontSize: 13, fontWeight: FontWeight.w300)),
 
-              ],
+                ],
 
-            ),
+              ),
 
-          ],
-        ),
-        SizedBox(height: 10)
-      ],
+            ],
+          ),
+          SizedBox(height: 10)
+        ],
+      ),
     );
   }
 }
